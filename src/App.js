@@ -1,9 +1,21 @@
 import logo from './logo.svg';
+import axios from 'axios';
 import './App.css';
+import { useEffect } from 'react';
 
-function App() {
+const App = (props) => {
+
+  useEffect(() => {
+    const apiCall = async () => {
+      let username = "Kangnos"
+      const response = await axios.get(`https://api.github.com/users/${username}`)
+      console.log(response.data)
+    };
+    apiCall();
+  }, []);
   return (
-
+    <div className="App">
+    </div>
   );
 }
 
