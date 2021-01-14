@@ -10,11 +10,14 @@ const App = (props) => {
       let username = "Kangnos"
       const response = await axios.get(`https://api.github.com/users/${username}`)
       console.log(response.data)
+      console.log(response.data.followers)
+      return response.data
     };
     apiCall();
-  }, []);
+  },[]);
   return (
     <div className="App">
+      {}
     </div>
   );
 }
