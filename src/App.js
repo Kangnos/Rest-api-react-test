@@ -1,23 +1,16 @@
 import logo from './logo.svg';
 import axios from 'axios';
 import './App.css';
+import PersonList from './Components/PersonList';
+import PersonInput from './Components/PersonInput';
 import React, { Component } from 'react'; 
-
-const api = axios.create({
-  baseURL: ''
-})
 
 class App extends Component {
   render() {
   return (
       <div className="App">
-      <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-      </header>
-      <p className="App-intro">
-          To get started, edit <code>src/App.js</code>
-      </p>
+        <PersonInput/>
+        <PersonList/>
       </div>
   );
   }
