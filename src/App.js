@@ -1,25 +1,25 @@
 import logo from './logo.svg';
 import axios from 'axios';
 import './App.css';
-import { useEffect } from 'react';
+import React, { Component } from 'react'; 
 
-const App = (props) => {
+const api = axios.create({
+  baseURL: ''
+})
 
-  useEffect(() => {
-    const apiCall = async () => {
-      let username = "Kangnos"
-      const response = await axios.get(`https://api.github.com/users/${username}`)
-      console.log(response.data)
-      console.log(response.data.followers)
-      return response.data
-    };
-    apiCall();
-  },[]);
+class App extends Component {
+  render() {
   return (
-    <div className="App">
-      {}
-    </div>
+      <div className="App">
+      <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+      </header>
+      <p className="App-intro">
+          To get started, edit <code>src/App.js</code>
+      </p>
+      </div>
   );
+  }
 }
-
-export default App;
+export default App; //외부에서 import로 불러오기 위해 export
