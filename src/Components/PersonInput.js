@@ -29,7 +29,7 @@ export default class PersonInput extends React.Component{
             <form onSubmit={this.handleSubmit}>
                 <label>
                     Person ID:
-                    <input type="number" name="id" onChange={his.handleChange}></input>
+                    <input type="number" name="id" onChange={this.handleChange}></input>
                 </label>
                 <button type="submit">delete</button>
             </form>

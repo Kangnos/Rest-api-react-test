@@ -2,15 +2,14 @@ import logo from './logo.svg';
 import axios from 'axios';
 import './App.css';
 import PersonList from './Components/PersonList';
-import PersonInput from './Components/PersonInput';
+import WeatherAPI from './Components/WeatherAPI';
 import React, { Component } from 'react'; 
 
 class App extends Component {
   render() {
   return (
       <div className="App">
-        <PersonInput/>
-        <PersonList/>
+        <WeatherAPI/>
       </div>
   );
   }
