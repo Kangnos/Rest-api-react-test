@@ -51,8 +51,8 @@ class App extends Component {
         <div class="weather">
             <div id="City" class="box">Weather in <b>{this.state.cityplacename}</b></div>
             <div id="Temp" class="box">Current Temperature: {this.state.normal_temp}°C</div>
+            <img src="C:\Developer\rest-api-test\public\Brand-New weather icons\broken clouds.png" alt=""/>
             <div id="current_weather" class="box">{this.state.current_weather}</div>
-            <img src="" alt=""/>
             <div id="min_max_temperature" class="box">{this.state.mintemperature}°C / {this.state.maxtemperature}°C</div>
             <div id="humidity" class="box">humidity: {this.state.humidity}%</div>
             <div id="windspeed" class="box">Wind Speed: {this.state.wind_speed}m/s</div>
