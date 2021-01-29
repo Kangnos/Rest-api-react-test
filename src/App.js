@@ -24,10 +24,12 @@ class App extends Component {
           maxtemperature: res.data.main.temp_max, humidity: res.data.main.humidity, wind_speed: res.data.wind.speed, current_weather: res.data.weather[0].description});
           console.log(this.state)
           console.log(res.data)
-          
+          if (this.state.current_weather.match('맑음')) {
+            React.createElement("img", { src: "public\Brand-New weather icons\broken clouds.png", className: "weather_icon", alt: "weather_icon" })
+          }
           if (this.state.current_weather.match('온흐림')) {
-            this.setState({current_weather: "흐림"})
-            createElement("img", { src: logo, className: "weather_icon", alt: "weather_icon" })
+            React.this.setState({current_weather: "흐림"})
+            createElement("img", { src: "public\Brand-New weather icons\clear sky.png", className: "weather_icon", alt: "weather_icon" })
           }
           
           if (this.state.current_weather.match('실')) {
@@ -42,6 +44,9 @@ class App extends Component {
           {
             this.setState({current_weather: "안개"})
           }
+          if (this.state.current_weather.match("구름") || this.state.current_weather.match("약간")) {
+            createElement("img", { src: "public\Brand-New weather icons\few clouds.png", className: "weather_icon", alt: "weather_icon" })
+          }
       })
   }
 
@@ -51,8 +56,10 @@ class App extends Component {
         <div class="weather">
             <div id="City" class="box">Weather in <b>{this.state.cityplacename}</b></div>
             <div id="Temp" class="box">Current Temperature: {this.state.normal_temp}°C</div>
-            <img src="C:\Developer\rest-api-test\public\Brand-New weather icons\broken clouds.png" alt=""/>
-            <div id="current_weather" class="box">{this.state.current_weather}</div>
+            <div id="current_weather" class="box">
+              {this.state.current_weather}
+              <img src={require('')}></img>
+            </div>
             <div id="min_max_temperature" class="box">{this.state.mintemperature}°C / {this.state.maxtemperature}°C</div>
             <div id="humidity" class="box">humidity: {this.state.humidity}%</div>
             <div id="windspeed" class="box">Wind Speed: {this.state.wind_speed}m/s</div>
